@@ -1,234 +1,204 @@
-/* 🌐 Global Styles */
+/* 🌐 Reset and Fonts */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+/* 🌄 Background Image (from your images folder) */
 body {
-  background: #f7f9fc;
-  color: #333;
-  overflow-x: hidden;
-}
-
-/* 🧭 Navbar */
-header {
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-nav {
+  background: url("images/bg.jpg") no-repeat center center/cover;
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-.logo {
-  background: linear-gradient(90deg, #5f2eea, #3a86ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  transition: 0.3s;
-}
-.nav-links a:hover {
-  color: #3a86ff;
-}
-
-/* 💫 Hero Section */
-.hero {
-  background: linear-gradient(135deg, #5f2eea, #3a86ff);
-  color: white;
-  padding: 100px 20px;
-}
-.hero-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  gap: 40px;
-}
-.hero-img img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  border: 5px solid white;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  animation: float 3s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.hero-text {
-  max-width: 500px;
-  text-align: left;
-}
-.hero-text h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-.hero-text span {
-  color: #fff;
-  font-weight: 700;
-}
-.hero-text h3 {
-  font-size: 1.2rem;
-  color: #e3def9;
-  margin-bottom: 15px;
-}
-.hero-text p {
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
-.social-icons a {
+  align-items: center;
   color: white;
-  font-size: 1.5rem;
-  margin-right: 10px;
-  transition: 0.3s;
-}
-.social-icons a:hover {
-  transform: scale(1.2);
-  color: #f0f0f0;
-}
-.btn {
-  display: inline-block;
-  background: white;
-  color: #3a86ff;
-  padding: 10px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-.btn:hover {
-  background: #3a86ff;
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* 🌸 About */
-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-section h2 {
-  color: #5f2eea;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-.about p {
-  max-width: 800px;
-  margin: auto;
-  color: #555;
-  line-height: 1.8;
-}
-
-/* 💻 Projects */
-.projects {
-  background: #eef2f8;
-}
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-.project {
-  background: white;
-  border-radius: 15px;
-  width: 300px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
   overflow: hidden;
 }
-.project:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+/* ✨ Dark overlay for readability */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  z-index: 0;
 }
-.project img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.project-info {
-  padding: 20px;
-}
-.project-info h3 {
-  color: #3a86ff;
-  margin-bottom: 8px;
-}
-.project-info p {
-  color: #555;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-}
-.project-info a {
-  background: linear-gradient(90deg, #5f2eea, #3a86ff);
-  color: white;
-  padding: 8px 15px;
+
+/* 🎧 Player Container */
+.player-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 25px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.project-info a:hover {
-  opacity: 0.9;
-}
-
-/* 🛠 Skills */
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.skill {
-  background: white;
-  border-radius: 25px;
-  padding: 12px 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  font-weight: 500;
-  color: #333;
-  transition: transform 0.3s;
-}
-.skill:hover {
-  transform: translateY(-5px);
-}
-.skill i {
-  color: #3a86ff;
-  margin-right: 8px;
-}
-
-/* 💌 Contact */
-.contact {
-  background: #eef2f8;
-}
-.contact a {
-  color: #5f2eea;
-  text-decoration: none;
-  font-weight: 500;
-}
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* 🌙 Footer */
-footer {
-  background: linear-gradient(90deg, #5f2eea, #3a86ff);
-  color: white;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  padding: 30px;
   text-align: center;
-  padding: 25px 10px;
-  font-size: 0.95rem;
+  width: 330px;
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.player-container:hover {
+  transform: translateY(-8px);
+}
+
+/* 🎵 Title */
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* 💿 Album Cover */
+.music-player img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* 🎵 Rotate animation (will be active when playing) */
+.rotate {
+  animation: rotateAlbum 8s linear infinite;
+}
+
+@keyframes rotateAlbum {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 📝 Song Title */
+#song-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* ▶️ Player Controls */
+.controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.controls button:hover {
+  transform: scale(1.2);
+  color: #f9d423;
+}
+
+/* 📊 Progress Bar */
+.progress-container {
+  background: rgba(255, 255, 255, 0.3);
+  height: 6px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 25px 0;
+  cursor: pointer;
+}
+
+#progress {
+  background: linear-gradient(90deg, #f9d423, #ff4e50);
+  height: 6px;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.2s;
+}
+
+/* ⏱ Time Display */
+.song-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  color: #fff;
+}
+
+/* 🎶 Playlist */
+.playlist {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 15px;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.playlist h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+.playlist ul {
+  list-style: none;
+}
+
+.playlist li {
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  color: #fff;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playlist li:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.playlist li.active {
+  background: linear-gradient(90deg, #f9d423, #ff4e50);
+  font-weight: 600;
+}
+
+.playlist li i {
+  opacity: 0.8;
+  font-size: 1.2rem;
+}
+
+/* 🌍 Scrollbar */
+.playlist::-webkit-scrollbar {
+  width: 6px;
+}
+.playlist::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 400px) {
+  .player-container {
+    width: 90%;
+  }
 }
